@@ -1,0 +1,1177 @@
+@import "bourbon"
+@import "sass/vars"
+@import "sass/base"
+
+//loader
+.loader
+	position: fixed
+	left: 0
+	bottom: 0
+	right: 0
+	top: 0
+	z-index: 9999
+	width: 100%
+	height: 100%
+	background-color: $accent
+	.loader-in
+		width: 170px
+		height: 86px
+		position: absolute
+		left: 50%
+		top: 50%
+		margin-left: -85px
+		margin-top: -43px
+		text-align: center
+		.spinner
+			margin: 10px auto
+			width: 70px
+			text-align: center
+			div
+				width: 15px
+				height: 15px
+				background-color: #fff
+				border-radius: 100%
+				display: inline-block
+				@include animation(sk-bouncedelay 1.4s infinite ease-in-out both);
+			.bounce1
+				@include animation-delay(-0.32s)
+			.bounce2
+				@include animation-delay(-0.16s)
+
+			@include keyframes(sk-bouncedelay)
+				0%, 80%, 100%
+					@include transform(scale(0))
+				40%
+					@include transform(scale(1))
+
+// header
+header
+	background-color: $accent
+	width: 100%
+	.open-close
+		display: none
+		.toggle-mnu 
+			display: block
+			width: 28px
+			height: 28px
+
+			span:after, span:before 
+				content: ""
+				position: absolute
+				left: 0
+				top: 9px
+
+			span:after
+				top: 18px
+
+			span 
+				position: relative
+				display: block
+
+			span, span:after, span:before
+				width: 100%
+				height: 2px
+				background-color: #fff
+				transition: all 0.3s
+				backface-visibility: hidden
+				border-radius: 2px
+
+			&.on span 
+				background-color: transparent
+
+			&.on span:before 
+				transform: rotate(45deg) translate(-1px, 0px)
+
+			&.on span:after 
+				transform: rotate(-45deg) translate(6px, -7px)
+
+	.logo
+		padding-top: 5px
+		padding-bottom: 10px
+		width: 170px
+		.logo-img
+			width: 153px
+			height: 34px
+			background-image: url(img/logo.png)
+			background-repeat: no-repeat
+			background-position: center
+		span
+			margin-top: 2px
+			display: block
+			font-family: $roboregular
+			color: #fff
+			text-transform: uppercase
+			font-size: em(10px)
+
+	.left-mnu
+		padding-top: 18px
+		text-align: right
+		padding-right: 20px
+		ul
+			margin: 0
+			padding: 0 
+			li
+				display: inline-block
+				margin-left: 26px
+				&:first-child
+					margin-left: 0
+				a
+					color: #fff
+					font-family: $roboregular
+					font-size: em(12px)
+					text-transform: uppercase
+					@include transform(translateZ(0))
+					@include backface-visibility(hidden)
+					position: relative
+					&::before
+						content: ""
+						position: absolute
+						z-index: 1
+						left: 50%
+						right: 50%
+						bottom: -2px
+						background: #fff
+						height: 1px
+						@include transition-property(left, right)
+						@include transition-duration(0.3s)
+						@include transition-timing-function(ease-out)
+					&:hover
+						text-decoration: none
+						&::before
+							left: 0
+							right: 0
+					&:link
+						text-decoration: none
+	.btn-mnu
+		padding-top: 12px
+		padding-left: 0
+		padding-right: 0
+		width: 120px
+		button
+			width: 120px
+			height: 42px
+			background-color: $accent2
+			border: none
+			border-radius: 3px
+			box-shadow: 0px 2px 16px 1px #1C9E9E
+			color: #000
+			font-family: $roboregular
+			font-size: em(13px)
+			text-transform: uppercase
+		i
+			font-size: em(20px)
+			vertical-align: -1px
+			margin-right: 7px	
+
+	.right-mnu
+		padding-top: 18px
+		text-align: right
+		width: 460px
+		ul
+			margin: 0
+			padding: 0
+			li
+				display: inline-block
+				margin-left: 24px
+				&:first-child
+					margin-left: 0
+				&:last-child,
+				&:nth-last-child(2)
+					a
+						text-transform: capitalize
+				a
+					color: #fff
+					font-family: $roboregular
+					font-size: em(12px)
+					text-transform: uppercase
+					@include transform(translateZ(0))
+					@include backface-visibility(hidden)
+					position: relative
+					&::before
+						content: ""
+						position: absolute
+						z-index: 1
+						left: 50%
+						right: 50%
+						bottom: -2px
+						background: #fff
+						height: 1px
+						@include transition-property(left, right)
+						@include transition-duration(0.3s)
+						@include transition-timing-function(ease-out)
+					&:hover
+						text-decoration: none
+						&::before
+							left: 0
+							right: 0
+					&:link
+						text-decoration: none
+					.login
+						display: block
+						display: inline-block
+						width: 12px
+						height: 15px
+						background-image: url(img/lock.png)
+						background-repeat: no-repeat
+						background-position: center
+						margin-right: 5px
+						vertical-align: -2px
+					.reg
+						margin-right: 5px
+						display: block
+						display: inline-block
+						width: 12px
+						height: 11px
+						background-image: url(img/login.png)
+						background-repeat: no-repeat
+						background-position: center
+						vertical-align: -1px
+
+.search-main
+	width: 100%
+	height: 364px
+	background-image: url(img/top-bg.jpg)
+	background-repeat: no-repeat
+	background-position: center
+	background-size: cover
+	position: relative
+	z-index: 2
+	>.container
+		position: relative
+		@include clearfix
+		height: inherit
+		padding-top: 150px
+		.search-box
+			position: relative
+			width: 920px
+			height: auto
+			left: 50%
+			@include transform(translate(-50%, 0%))
+			@include clearfix
+
+			.search
+				float: left
+				width: 780px
+				border: 2px solid $accent2	
+				border-radius: 6px
+				.choose-buy
+					float: left
+					.select2
+						width: 106px !important
+						.selection
+							.select2-selection
+								height: 51px
+								width: 106px
+								outline: none
+								border-right: 1px solid #E8E8E8
+								.select2-selection__rendered
+									line-height: 50px
+									font-size: em(17px)
+
+
+					.select2-container--default 
+						.select2-selection--single 
+							border-radius: 0
+							background-color: #FAFAFA
+							border: none
+							padding-left: 9px
+							.select2-selection__rendered
+							.select2-selection__arrow
+								right: 14px 
+								top: 13px
+								width: 10px
+								b
+									border-color: $accent2 transparent
+
+				.choose-flat
+					width: 106px
+					float: left
+					border-right: 1px solid #E8E8E8
+					.drop-flat
+						position: static
+						.show-flat__icon
+							position: relative
+							&::after
+								border: none !important
+								border: 4px solid transparent !important
+								border-bottom: 5px solid $accent2 !important
+								top: 20px !important
+							
+						.flat-down
+							height: 51px
+							background-color: #FAFAFA
+							display: block
+							line-height: 51px
+							padding-left: 10px
+							font-size: em(17px)
+							color: #111
+							font-family: $roboregular
+							text-decoration: none
+							padding-left: 12px
+							position: relative
+							&:hover,
+							&:link
+								text-decoration: none
+							&::after
+								position: absolute
+								content: ''
+								right: 11px
+								top: 24px
+								width: 4px
+								height: 4px
+								border: 4px solid transparent
+								border-top: 5px solid $accent2
+							
+
+					.show-flat
+						display: block !important
+						position: relative
+						&::before
+							content: ''
+							position: absolute
+							width: 10px
+							height: 10px
+							background-color: #fff
+							top: -5px
+							left: 130px
+							@include transform(rotate(-45deg))
+					.flat-doropdown
+						position: absolute
+						left: 0
+						width: 100%
+						background-color: #fff
+						max-width: 650px
+						display: none
+						padding: 15px 20px
+						top: 120%
+						border-radius: 5px
+						z-index: 99
+						@include clearfix
+						.line-chooses
+							margin-bottom: 10px
+						.text-flat
+							padding-right: 0
+							span
+								font-size: em(16px)
+								color: #000
+								font-family: $robomedium
+								vertical-align: -8px
+						.flat-chooses
+							.btn-primary
+								background-color: #fff
+								border: 1px solid #E0E0E0
+								color: #111
+								margin-right: 10px
+								border-radius: 3px
+								margin-bottom: 10px
+								&.active
+									background-color: $accent2
+									border: 1px solid $accent2
+									color: #111
+									outline: none
+
+				.choose-room
+					width: 106px
+					float: left
+					position: relative
+					border-right: 1px solid #E8E8E8
+
+					.room-down
+						height: 51px
+						background-color: #FAFAFA
+						display: block
+						line-height: 51px
+						padding-left: 10px
+						font-size: em(17px)
+						color: #111
+						font-family: $roboregular
+						text-decoration: none
+						padding-left: 12px
+						position: relative
+						&:hover,
+						&:link
+							text-decoration: none
+						&::after
+							position: absolute
+							content: ''
+							right: 11px
+							top: 24px
+							width: 4px
+							height: 4px
+							border: 4px solid transparent
+							border-top: 5px solid $accent2
+
+					.show-room
+						display: block !important
+						position: relative
+						&::before
+							content: ''
+							position: absolute
+							left: 70px	
+							top: -5px
+							width: 10px
+							height: 10px
+							background-color: #fff	
+							@include transform(rotate(-45deg))
+						
+
+					.room-dropdown
+						position: absolute
+						top: 120%
+						left: -40px
+						min-width: 205px
+						padding: 15px 0px 5px
+						background-color: #fff
+						border-radius: 5px
+						text-align: left
+						display: none
+						.btn-group-vertical
+							label
+								span
+									font-size: em(16px)
+									color: #111
+									font-family: $robomedium
+							label input[type="checkbox"] ~ i.fa.fa-square-o
+								color: #A5A5A5    
+								display: inline
+
+							label input[type="checkbox"] ~ i.fa.fa-check-square
+								display: none
+
+							label input[type="checkbox"]:checked ~ i.fa.fa-square-o
+								display: none
+
+							label input[type="checkbox"]:checked ~ i.fa.fa-check-square
+								color: $accent    
+								display: inline
+
+							label:hover input[type="checkbox"] ~ i.fa 
+								color: #7AA3CC
+
+							div[data-toggle="buttons"] label.active
+								color: #7AA3CC
+							label
+								i
+									display: block
+									display: inline-block
+									width: 15px
+									height: 15px
+									font-size: 20px
+									margin-right: 10px
+							.btn
+								outline: none
+								text-align: left
+								padding: 2px 15px 5px
+								box-shadow: none !important
+								border-bottom: 1px solid #F5F5F5
+								margin-bottom: 5px
+								&:last-child
+									border-bottom: none
+								&.active
+									box-shadow: none
+					.icon-room
+						position: relative
+						&::after
+							position: absolute
+							content: ''
+							right: 11px
+							top: 20px
+							width: 4px
+							height: 4px
+							border: 4px solid transparent
+							border-bottom: 5px solid $accent2 !important
+				
+				.choose-price
+					width: 106px
+					float: left
+					position: relative
+					.price-down
+						height: 51px
+						background-color: #FAFAFA
+						display: block
+						line-height: 51px
+						padding-left: 10px
+						font-size: em(17px)
+						color: #111
+						font-family: $roboregular
+						text-decoration: none
+						padding-left: 12px
+						&:hover,
+						&:link
+							text-decoration: none
+					.show-price
+						display: block !important
+						position: relative
+						&::before
+							content: ''
+							position: absolute
+							left: 70px	
+							top: -5px
+							width: 10px
+							height: 10px
+							background-color: #fff	
+							@include transform(rotate(-45deg))
+
+					.price-dropdown	
+						position: absolute
+						top: 120%
+						left: -40px
+						min-width: 215px
+						padding: 20px 5px
+						background-color: #fff
+						border-radius: 5px
+						text-align: left
+						display: none
+						>div
+							@include clearfix
+							.from-to
+								float: left
+								width: 50%
+								label
+									display: inline-block
+									font-size: em(14px)
+									margin-right: 5px
+									margin-left: 5px
+								input
+									outline: none
+									display: inline-block
+									width: 69px
+									height: 32px
+									border: none
+									border: 1px solid #E5E5E5
+									border-radius: 4px
+									padding: 0 6px
+						.slider-box
+							padding: 15px 10px 0 7px
+							.ui-widget
+								&.ui-widget-content
+									border: none
+									background-color: #E8E8E8
+									height: 5px
+								.ui-widget-header
+									background-color: $accent
+								.ui-state-default
+									border: 3px solid #fff
+									border-radius: 50%
+									top: -6px
+									background-color: $accent
+									box-shadow: 0px 0px 8px 0px #EFEFEF
+									outline: none
+
+
+							.slider-num
+								padding-top: 8px
+								span
+									font-size: em(15px)
+									font-family: $robomedium
+									color: #000
+									display: block
+									float: left
+									&:last-child
+										float: right
+									i
+										margin-left: 5px
+				
+				.choose-city
+					width: 352px
+					float: left
+					position: relative
+					height: 51px
+					background-color: #fff
+					padding-top: 1px
+					.choose-st
+						width: 100%
+						border: none
+						background-color: #FAFAFA
+						padding: 14px 15px
+						font-size: em(16px)
+						color: #000
+						outline: none
+							
+						
+						
+						
+							
+
+			.search-go
+				width: 114px
+				height: 50px
+				float: left
+				margin-left: 15px
+				margin-top: 3px
+				button
+					height: inherit
+					width: 100%
+					background-color: $accent2
+					color: #000
+					border: none
+					font-family: $roboregular
+					border-radius: 5px
+					font-size: em(16px)
+					text-transform: uppercase
+					i
+						margin-right: 7px
+						font-size: em(18px)
+
+
+
+#undefined_flexselect_dropdown
+	margin-top: 12px
+	border-radius: 7px
+	box-shadow: none
+	padding: 9px 0
+	max-height: 300px
+	&::-webkit-scrollbar-track
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+		background-color: transparent
+
+	&::-webkit-scrollbar
+		width: 6px
+		background-color: transparent
+
+	&::-webkit-scrollbar-thumb
+		background-color: #999999
+		border-radius: 20px
+	ul
+		
+		li
+			font-size: em(16px)
+			color: #000
+			font-family: $roboregular
+			padding: 7px 10px
+			border-bottom: 1px solid #F5F5F5
+			&:hover
+				background-color: #E8F7F7
+			&.flexselect_selected
+				background-color: #E8F7F7
+
+
+
+.select2-dropdown--below
+	width: 150px !important
+
+.select2-container--open
+	.select2-dropdown--below
+		margin-top: 8px
+		border-right: 5px
+		position: relative
+		&::before
+			content: ''
+			position: absolute
+			width: 10px
+			height: 10px
+			top: -3px
+			left: 30px
+			background-color: #fff
+			@include transform(rotate(-45deg))
+
+.select2-container--default 
+	.select2-results
+		>.select2-results__options
+			padding: 10px 0
+			border-radius: 10px
+		.select2-results__option--highlighted[aria-selected]
+			background-color: #fff
+			color: #111
+			padding: 6px 10px
+			font-size: 15px
+		.select2-results__option[aria-selected=true]
+			background-color: #E8F7F7
+			color: #111
+			padding: 6px 10px
+			font-size: 15px
+		.select2-results__option
+			padding: 6px 10px
+			font-size: 15px
+			border-bottom: 1px solid #F5F5F5
+
+.select2-search--dropdown
+	display: none !important
+
+.has-error 
+	.form-control
+		border: 2px solid red !important
+
+.modal
+	background-color: transparentize(#fff, 0.1)
+	.modal-dialog
+		max-width: 460px
+		border-radius: 8px
+		.modal-content
+			border: none
+			box-shadow: none
+			box-shadow: 0 5px 15px #D4D6D6
+			overflow: hidden
+			.modal-header
+				background-image: url(img/reg-bg.png)
+				background-repeat: no-repeat
+				background-position: center
+				background-size: cover
+				position: relative
+				height: 144px
+				>span
+					display: block
+					position: absolute
+					left: 50%
+					top: 50%
+					height: 21px
+					line-height: 22px
+					transform: translate(-50%, -50%)
+					text-transform: uppercase
+					color: #fff
+					font-size: em(33px)
+					font-family: $roboregular
+					letter-spacing: .5px
+				>a
+					display: block
+					position: absolute
+					right: 15px
+					top: 15px
+					font-size: em(14px)
+					color: #fff
+					font-family: $roboregular
+					&:hover
+						text-decoration: none
+			.auth-bg
+				background-image: url(img/auth-bg.png)
+			.modal-body
+				@include clearfix
+				padding-top: 0
+				padding-left: 0
+				padding-right: 0
+				.error-msg
+					text-align: center
+					padding: 7px 0 9px
+					span
+						color: red
+						font-size: em(13px)
+						font-family: $roboregular
+				.form-group
+					padding-left: 60px
+					margin-bottom: 0
+					margin-top: 0
+					padding-bottom: 0
+					padding-top: 0
+					@include clearfix
+					.input-flags
+						position: relative
+						width: 80px
+						float: left
+						&::before
+							content: ''
+							position: absolute
+							left: -30px
+							top: 17px
+							width: 17px
+							height: 18px
+							background-image: url(img/flags/phone.png)
+						dl
+							dt
+								border: 2px solid #C6CCD2
+								width: 80px
+								height: 48px
+								text-align: left
+								padding-left: 11px
+								padding-top: 6px
+								border-radius: 7px
+								position: relative
+								&::after
+									content: ''
+									position: absolute
+									right: 10px
+									top: 19px
+									width: 10px
+									height: 6px
+									background-image: url(img/flags/arrow.png)
+						ul
+							position: absolute
+							top: 110%
+							margin: 0
+							padding: 0 0 0 11px
+							border: 2px solid #C6CCD2
+							width: 80px
+							border-radius: 7px
+							background-color: #fff
+							z-index: 9
+						.flag 
+							display: inline-block
+							width: 32px
+							height: 32px
+							background: url('img/flags/flags.png') no-repeat
+							&.flag-md 
+								background-position: -96px -32px
+							&.flag-kg 
+								background-position: -32px -32px
+							&.flag-af
+								background-position: 0 0
+							&.flag-tr
+								background-position: -96px -64px
+							&.flag-uz
+								background-position: -32px -96px
+							&.flag-am
+								background-position: -32px 0
+							&.flag-tm 
+								background-position: -64px -64px
+							&.flag-tj
+								background-position: -32px -64px
+							&.flag-il
+								background-position: 0 -32px
+							&.flag-kz 
+								background-position: -64px -32px
+							&.flag-az
+								background-position: -64px 0
+							&.flag-ua 
+								background-position: 0 -96px
+							&.flag-by 
+								background-position: -96px 0
+							&.flag-ru 
+								background-position: 0 -64px
+					
+					.input-phone
+						float: left
+						width: 258px
+						margin-left: 13px
+						>input
+							border: 2px solid #C6CCD2
+							outline: none
+							border-radius: 7px
+							height: 48px
+							width: 100%
+							padding: 0 15px
+							color: #000
+							font-size: em(16px)
+							font-family: $robomedium
+							&:required
+								&:valid
+									border: 2px solid green !important
+
+					.to-sms
+						width: 151px
+						float: left
+						position: relative
+						&::before
+							content: ''
+							position: absolute
+							left: -30px
+							top: 17px
+							width: 19px
+							height: 19px
+							background-image: url(img/flags/message.png)
+						a
+							display: block
+							width: 100%
+							text-align: center
+							color: #fff
+							height: 48px
+							background-color: #24AA98
+							border-radius: 7px
+							line-height: 48px
+							font-size: em(16px)
+							font-family: $roboregular
+							text-transform: capitalize
+							&:hover
+								text-decoration: none
+					.code-sms
+						width: 190px
+						float: left
+						margin-left: 12px
+						input
+							border: 2px solid #C6CCD2
+							outline: none
+							border-radius: 7px
+							height: 48px
+							width: 100%
+							padding: 0 15px
+							color: #000
+							font-size: em(16px)
+							font-family: $robomedium
+							&:required
+								&:valid
+									border: 2px solid green !important
+					.input-email
+						width: 351px
+						position: relative
+						margin-bottom: 25px
+						&::before
+							content: ''
+							position: absolute
+							left: -30px
+							top: 17px
+							width: 21px
+							height: 13px
+							background-image: url(img/flags/email.png)
+						input
+							border: 2px solid #C6CCD2
+							outline: none
+							border-radius: 7px
+							height: 48px
+							width: 100%
+							padding: 0 15px
+							color: #000
+							font-size: em(16px)
+							font-family: $robomedium
+							&:required
+								&:valid
+									border: 2px solid green !important
+									
+									
+						
+									
+
+					.input-pass
+						width: 351px
+						position: relative
+						&::before
+							content: ''
+							position: absolute
+							left: -30px
+							top: 17px
+							width: 14px
+							height: 18px
+							background-image: url(img/flags/lock.png)
+						input
+							border: 2px solid #C6CCD2
+							outline: none
+							border-radius: 7px
+							height: 48px
+							width: 100%
+							padding: 0 15px
+							color: #000
+							font-size: em(16px)
+							font-family: $robomedium
+							&:required
+								&:valid
+									border: 2px solid green !important
+					.input-radio
+						padding-top: 15px
+						float: left 
+						margin-right: 30px
+						label
+							color: #b4bbc2
+							font-family: $roboregular !important
+							color: #b4bbc2
+
+						input[type="radio"] 
+							display: none
+							margin-right: 5px
+						input[type="radio"] + label span 
+							display: inline-block
+							width: 16px
+							height: 16px
+							margin: -1px 4px 0 0
+							vertical-align: middle
+							cursor: pointer;
+							-moz-border-radius: 50%
+							border-radius: 50%
+
+						input[type="radio"] + label span 
+							background-color: #DEE2E7
+						input[type="radio"]:checked + label span 
+							background-color: #24AA98
+							border: 3px solid #DEE2E7
+						input[type="radio"] + label span,
+						input[type="radio"]:checked + label span 
+							-webkit-transition: background-color 0.4s linear
+							-o-transition: background-color 0.4s linear
+							-moz-transition: background-color 0.4s linear
+							transition: background-color 0.4s linear
+					.input-checkbox
+						padding-top: 10px
+						position: relative
+						label
+							display: block
+							color: #b4bbc2
+							position: relative
+							margin-left: 22px
+						input[type=checkbox] 
+							display: none
+						input[type=checkbox] + label:before 
+							font-family: FontAwesome
+							display: inline-block
+							position: absolute
+							left: -20px
+							top: -2px
+						input[type=checkbox] + label:before 
+							content: "\f096"
+							color: #24AA98
+							font-size: em(20px)
+							color: #C6CCD2
+						input[type=checkbox] + label:before 
+							
+						input[type=checkbox]:checked + label:before 
+							content: "\f14a"
+							color: #24AA98
+							font-size: em(20px)
+						.remb
+							text-align: right
+							color: #b4bbc2
+							font-family: $roboregular
+							position: absolute
+							right: 50px
+							top: 10px
+							&:hover
+								text-decoration: none
+					.input-button
+						width: 350px
+						margin-top: 15px
+						margin-bottom: 25px
+						button
+							width: 100%
+							height: 50px
+							border: none
+							border-radius: 5px
+							background-color: $accent2
+							color: #000
+							font-size: em(19px)
+							font-family: $roboregular
+							box-shadow: 0px 3px 20px -5px rgba(0,0,0,0.75)
+
+						
+
+.section-two
+	padding-top: 20px
+	.title
+		text-align: center
+		padding-bottom: 20px
+		span
+			font-size: em(30px)
+			text-transform: uppercase
+			color: #333
+			font-family: $robocand	
+	.section-one__box
+		position: relative
+		z-index: 0
+		.owl-controls
+			.owl-nav
+				@include clearfix
+				.owl-prev
+					width: 19px
+					height: 31px
+					position: absolute
+					top: 43%
+					left: -42px
+					background-image: url(img/news/arrow.png)
+					background-repeat: no-repeat
+					background-size: 19px 31px
+					&:hover
+						background-image: url(img/news/arrow-hover.png)
+						@include transform(rotate(180deg))
+				.owl-next
+					width: 19px
+					height: 31px
+					position: absolute
+					right: -42px
+					top: 43%
+					background-image: url(img/news/arrow.png)
+					background-repeat: no-repeat
+					background-size: 19px 31px
+					@include transform(rotate(180deg))
+					&:hover
+						background-image: url(img/news/arrow-hover.png)
+						@include transform(rotate(360deg))
+
+		.item
+			box-shadow: 0px 0px 11px 0px #F0F0F0 
+			padding: 10px 15px
+			.item-head
+				height: 86px
+				a
+					color: #20b4b4
+					font-family: $robomedium 
+					font-size: em(18px)
+					line-height: 22px
+					&:hover
+						text-decoration: none
+			.item-img
+				width: 100%
+				height: 167px
+				margin-top: 10px
+				margin-bottom: 10px
+				overflow: hidden
+			.item-foot
+				height: 115px
+				span
+					display: block
+					color: #8c8c8c
+					font-family: $robobold
+					font-size: em(14px)
+					margin-bottom: 10px
+				p
+					color: #8c8c8c
+					font-size: 13px
+					font-family: $roboregular
+					margin: 0
+					padding: 0
+		.owl-stage-outer
+			padding-top: 10px
+			padding-bottom: 10px
+			padding-left: 5px
+			padding-right: 5px !important
+			width: 1150px
+
+.section-three
+	padding-top: 40px
+	.col-md-6
+		&:nth-child(1)
+			padding-right: 5px
+		&:nth-child(2)
+			padding-left: 5px
+		&:nth-child(5)
+			padding-left: 5px
+		&:nth-child(4)
+			padding-right: 5px
+	.info-item1,
+	.info-item2,
+	.info-item3,
+	.info-item4,
+	.info-item5
+		border-radius: 5px
+		min-height: 199px
+		width: 100%
+		margin-bottom: 8px
+		@include clearfix
+		.title
+			padding-left: 40px
+			padding-top: 15px
+			padding-bottom: 10px
+			span
+				color: #fff
+				font-size: em(23px)
+				font-family: $robocandbold
+
+		ul
+			float: left
+			padding-top: 0
+			padding-bottom: 0
+			margin-top: 0
+			margin-bottom: 0
+			li
+				list-style-type: none
+				margin-bottom: 5px
+				a
+					font-size: em(16px)
+					font-family: $roboregular
+					color: #fff
+					&:hover,
+					&:link
+						text-decoration: none
+	.info-item1	
+		background-image: url(img/info/info1.png)
+		background-size: cover
+		background-position: center center
+	.info-item2	
+		background-image: url(img/info/info2.png)
+		background-size: cover
+		background-position: center center
+	.info-item3	
+		background-image: url(img/info/info5.png)
+		background-size: cover
+		background-position: center center
+	.info-item4	
+		background-image: url(img/info/info3.png)
+		background-size: cover
+		background-position: center center
+	.info-item5	
+		background-image: url(img/info/info4.png)
+		background-size: cover
+		background-position: center center

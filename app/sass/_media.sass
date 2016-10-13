@@ -1,0 +1,620 @@
+@import "bourbon"
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	// header
+	header 
+		.left-mnu
+			width: 310px
+			ul
+				li
+					margin-left: 10px
+					a
+						font-size: em(11px)
+		.right-mnu
+			padding-left: 0
+			padding-right: 10px
+			width: 370px
+			ul
+				li
+					margin-left: 5px
+					a
+						font-size: em(11px)
+
+	// section-two
+	.section-two
+		.section-one__box
+			.owl-stage-outer
+				width: 100%
+
+
+	// section-three
+	.section-three
+		.heig
+			padding-bottom: 15px !important
+
+	// section-four
+	.section-four
+		.section-four__box
+			.owl-stage-outer
+				width: 100%
+
+	// section-six
+	.section-six
+		.section-six__box
+			.owl-stage-outer
+				width: 100%
+
+	// section-six
+	.section-seven
+		.section-seven__box
+			.owl-stage-outer
+				width: 100%
+
+	// section-eight
+	.section-eight 
+		.num 
+			.social-num 
+				span
+					font-size: em(40px)
+
+	// footer
+	footer 
+		.footer-mnu 
+			ul 
+				li 
+					margin: 0 5px
+					a
+						font-size: em(15px)
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	// header
+	header
+		padding-bottom: 5px 
+		.logo
+			width: 33.33333333%
+			padding-top: 10px
+			padding-bottom: 0
+			.logo-img
+				width: 210px
+				height: 46px
+				background-image: url(../img/logo-tab.png)
+				background-repeat: no-repeat
+				background-position: center
+				margin-bottom: 5px
+			span
+				font-size: em(13.7px)
+
+		.left-mnu
+			width: 41.66666667%
+			ul
+				li
+					margin-left: 8px
+					a
+						font-size: em(12px)
+		.btn-mnu
+			width: 25%
+			text-align: right
+			padding-right: 15px
+		.right-mnu
+			padding-top: 5px
+			text-align: right
+			padding-right: 15px
+			padding-bottom: 10px
+			width: 66.66666667%
+			ul
+				li
+					margin-left: 37px
+					a
+						font-size: em(12px)
+
+	// section-three
+	.section-three
+		.col-md-6,
+		.col-md-12
+			padding-left: 15px !important
+			padding-right: 15px !important
+		.heig
+			ul
+				margin: 0
+				padding: 0 20px
+				float: none
+				text-align: center
+			.title
+				text-align: center
+				padding-left: 15px
+
+	// section-eight
+	.section-eight 
+		.num 
+			margin-bottom: 40px
+
+	// search
+	.search-main
+		>.container 
+			.search-box
+				width: 720px 
+				.search 
+					width: 598px
+					.choose-city
+						width: 170px
+				.search-go
+					margin-left: 7px
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	// header
+	header
+		padding-bottom: 10px
+		position: relative
+		.open-close
+			display: block
+			padding-top: 25px
+			position: relative
+			z-index: 99
+		.logo
+			width: 50%
+			text-align: center
+			.logo-img
+				width: 153px
+				height: 34px
+				background-image: url(../img/logo.png)
+				background-repeat: no-repeat
+				background-position: center
+				margin: 0 auto
+			span
+				margin-top: 2px
+				display: block
+				font-family: $roboregular
+				color: #fff
+				text-transform: uppercase
+				font-size: em(10px)
+		.btn-mnu
+			text-align: right
+			width: 33.33333333%
+			position: absolute
+			right: 0px
+			top: 3px
+		.mmnu
+			display: none
+		.left-mnu
+			text-align: center
+			width: 100%
+			margin-bottom: 10px
+			border-top: 1px solid transparentize(#fff, 0.7)
+			margin-top: 11px
+			ul
+				li
+					display: block
+					margin: 0
+					padding: 0
+		.right-mnu
+			text-align: center
+			width: 100%
+			ul
+				li
+					display: block
+					margin: 0
+					padding: 0
+		
+	// .section-five
+	.section-five
+		margin-top: 60px
+		.section-five__box
+			.item
+				margin-bottom: 15px
+
+	// .section-seven
+	.section-seven .section-seven__box .item .item-in .item-img
+		width: 100%
+		height: 170px
+
+	// footer
+	footer 
+		.footer-mnu 
+			padding-bottom: 10px
+			ul 
+				border-top: 1px solid #ccc
+				margin-top: 10px
+				padding-top: 10px
+				display: none
+				li
+					display: block
+			.open-foot__menu
+				display: block
+
+	// search
+	.select2-dropdown--below
+		width: 214px !important
+	.search-main
+		>.container
+			padding-top: 50px 
+			.search-box
+				width: 100%
+				.search 
+					float: none
+					width: 450px
+					border: none
+					margin: 0 auto
+					.choose-buy
+						width: 214px
+						margin-bottom: 20px
+						.select2 .selection .select2-selection
+							width: 214px !important
+						.select2-container--default 
+							.select2-selection--single
+								.select2-selection__arrow
+									right: -97px
+
+					.choose-flat
+						width: 214px
+						float: right
+						margin-bottom: 20px
+						position: relative
+						.flat-doropdown
+							width: 450px
+							position: static
+							position: absolute
+							left: -236px
+						.show-flat
+							&::before
+								left: 272px
+					.choose-room
+						width: 214px
+						margin-bottom: 20px
+						.room-dropdown
+							left: 0
+							z-index: 10	
+					.choose-price
+						width: 214px
+						float: right
+						z-index: 99
+					.choose-city
+						width: 100%
+						margin-bottom: 20px
+				.search-go
+					width: 450px
+					margin: 0 auto
+					float: none
+	// modal
+	.modal 
+		.modal-dialog
+			width: 460px !important
+			margin: 0 auto
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 580px)
+	// news slider
+	.section-two 
+		.section-one__box 
+			.owl-controls 
+				.owl-nav 
+					.owl-prev
+						left: -10px
+					.owl-next
+						right: -10px
+
+	.section-two .title span
+		font-size: em(25px)
+		line-height: 30px
+
+	// .section-four
+	.section-four
+		padding-top: 30px
+		.title
+			text-align: center
+			padding-bottom: 20px
+			span
+				font-size: em(25px)
+				text-transform: uppercase
+				color: #333
+				font-family: $robocand	
+				line-height: 30px
+		.section-four__box
+			.owl-stage-outer
+
+				.owl-stage
+					.owl-item
+						.item
+							.item-img
+								width: 100%
+								height: 140px
+			.owl-controls
+				display: block
+
+	// section-six
+	.section-six
+		.section-six__box
+			.owl-controls
+				display: block
+				.owl-dots
+					bottom: -42px
+			.owl-stage
+				.owl-item
+					.item
+						.item-img
+							width: 100%
+							height: 140px
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	// .section-five
+	.section-five
+		.title
+			span
+				font-size: em(25px)
+				line-height: 28px
+		.section-five__box 
+			.item
+				img
+					width: 110px
+	
+	// .section-seven
+	.section-seven .section-seven__box .item .item-in .item-img
+		height: 140px
+
+
+	// section-eight
+	.section-eight 
+		padding-top: 25px
+		.title
+			span
+				font-size: em(25px)
+				line-height: 30px
+		.num 
+			margin-bottom: 40px
+			width: 100%
+			.social
+				i
+					font-size: em(60px)
+			.social-num
+				span
+					font-size: em(35px)
+				p
+					font-size: em(14px)
+
+	// footer
+	footer
+		.footer-end
+			padding-bottom: 15px
+			.end-center
+				margin-bottom: 10px
+				p
+					font-size: em(14px)
+					line-height: 17px
+
+	// search
+	.select2-dropdown--below
+		width: 180px !important
+	.search-main
+		>.container
+			padding-top: 50px 
+			.search-box
+				width: 100%
+				.search 
+					float: none
+					width: 380px
+					border: none
+					margin: 0 auto
+					.choose-buy
+						width: 180px
+						margin-bottom: 20px
+						.select2 .selection .select2-selection
+							width: 180px !important
+						.select2-container--default 
+							.select2-selection--single
+								.select2-selection__arrow
+									right: -63px
+
+					.choose-flat
+						width: 180px
+						float: right
+						margin-bottom: 20px
+						position: relative
+						.flat-doropdown
+							width: 380px
+							position: static
+							position: absolute
+							left: -200px
+						.show-flat
+							&::before
+								left: 235px
+					.choose-room
+						width: 180px
+						margin-bottom: 20px
+						.show-room
+							&::before
+								left: 35px
+						.room-dropdown
+							left: 0
+							z-index: 10	
+
+					.choose-price
+						width: 180px
+						float: right
+						z-index: 9
+					.choose-city
+						width: 100%
+						margin-bottom: 20px
+				.search-go
+					width: 380px
+					margin: 0 auto
+					float: none
+	
+	// modal
+	.modal 
+		.modal-dialog
+			width: 100% !important
+			margin: 0 auto
+			padding: 0 15px
+	.modal .modal-dialog .modal-content .modal-body .form-group
+		padding: 0 !important
+		width: 280px
+		margin: 0 auto
+
+	.modal .modal-dialog .modal-content .modal-body .form-group .input-phone
+		width: 185px
+
+	.modal .modal-dialog .modal-content .modal-body .form-group .to-sms
+		width: 115px
+
+	.modal .modal-dialog .modal-content .modal-body .form-group .code-sms
+		width: 151px
+
+	.modal .modal-dialog .modal-content .modal-body .form-group .input-email
+		width: 278px
+
+	.modal .modal-dialog .modal-content .modal-body .form-group .input-pass
+		width: 278px
+
+	.modal .modal-dialog .modal-content .modal-body .form-group .input-button
+		width: 278px
+
+	.modal .modal-dialog .modal-content .modal-body .form-group .input-checkbox
+		.remb
+			position: static
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 415px)
+	// search
+	.select2-dropdown--below
+		width: 180px !important
+	.search-main
+		>.container
+			padding-top: 50px 
+			.search-box
+				width: 100%
+				.search 
+					float: none
+					width: 280px
+					border: none
+					margin: 0 auto
+					.choose-buy
+						width: 130px
+						margin-bottom: 20px
+						.select2 .selection .select2-selection
+							width: 130px !important
+						.select2-container--default 
+							.select2-selection--single
+								.select2-selection__arrow
+									right: -13px
+
+					.choose-flat
+						width: 130px
+						float: right
+						margin-bottom: 20px
+						position: relative
+						.flat-doropdown
+							width: 280px
+							position: static
+							position: absolute
+							left: -150px
+						.show-flat
+							&::before
+								left: 235px
+					.choose-room
+						width: 130px
+						margin-bottom: 20px
+						.show-room
+							&::before
+								left: 35px
+						.room-dropdown
+							left: 0
+							z-index: 10	
+
+					.choose-price
+						width: 130px
+						float: right
+						z-index: 9
+						.price-dropdown
+							left: -83px
+						.show-price
+							&::before
+								left: 170px
+					.choose-city
+						width: 100%
+						margin-bottom: 20px
+				.search-go
+					width: 280px
+					margin: 0 auto
+					float: none
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 400px)
+	// header
+	header
+		.logo
+			padding-left: 10px
+			padding-right: 10px
+			.logo-img
+				width: 130px
+				height: 29px
+				background-size: cover
+			span
+				font-size: em(10px)
+		.btn-mnu
+			padding-top: 17px
+			top: 0
+			button
+				width: 100%
+				font-size: em(9.5px)
+				height: 35px
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 350px)
+	// section-seven
+	.section-seven .section-seven__box .item .item-in .item-foot
+		span
+			margin-top: 7px
+			display: block
+			line-height: 17px
+		a
+			width: 100%
+			font-size: em(17px)
+				
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/
+
+
+/*==========  Mobile First  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 769px)
+	// header
+	header
+		.mmnu
+			display: block !important
+
+	// footer
+	.footer-mnu
+		ul
+			display: block !important
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	/**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/**/
+
